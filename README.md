@@ -1,6 +1,13 @@
 # omnissignment
 
-A new Flutter project.
+Tasks completed from shared assignment pdf:
+- Login Screen
+- Validations(mail and password)
+- SignUp Screen
+
+Tasks incomplete:
+- SignUp Mobile Number Field
+- Model
 
 ## Getting Started
 
