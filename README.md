@@ -5,10 +5,11 @@ Tasks completed from shared assignment pdf:
 - Validations(mail and password)
 - SignUp Screen
 - Request(user model with serialization)
+- Response Model
 
 Tasks incomplete:
 - SignUp Mobile Number Field
-- Response Model
+- Plugging functionalities to SignUpScreen elements
 
 ## Getting Started
 
