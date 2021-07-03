@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:omnissignment/views/loginScreen.dart';
 
 import '/controllers/authController.dart';
 import 'constants.dart';
@@ -17,7 +18,7 @@ class SignUpScreen extends StatelessWidget {
       body: ListView(
         shrinkWrap: true,
         physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.all(kDefaultMargin),
+        padding: EdgeInsets.all(kDefaultMargin2),
         children: [
           FlutterLogo(
             size: kDefaultMargin2 * 6,
@@ -41,13 +42,15 @@ class SignUpScreen extends StatelessWidget {
             textInputAction: TextInputAction.next,
             decoration: kInputTextFieldDecoration.copyWith(
               hintText: 'Enter Your Name',
+              contentPadding: EdgeInsets.symmetric(
+                  vertical: kDefaultMargin, horizontal: kDefaultMargin),
               // errorText: !isUserIdValid ? 'Conditions not fulfilled' : null,
             ),
             onChanged: (value) {
               authController.userName.value = value.trim();
             },
           ),
-          SizedBox(height: kDefaultMargin/2),
+          SizedBox(height: kDefaultMargin / 2),
           Padding(
             padding: EdgeInsets.symmetric(
               vertical: kDefaultMargin,
@@ -60,13 +63,15 @@ class SignUpScreen extends StatelessWidget {
             textInputAction: TextInputAction.next,
             decoration: kInputTextFieldDecoration.copyWith(
               hintText: 'Enter Email',
+              contentPadding: EdgeInsets.symmetric(
+                  vertical: kDefaultMargin, horizontal: kDefaultMargin),
               // errorText: !isUserIdValid ? 'Conditions not fulfilled' : null,
             ),
             onChanged: (value) {
               authController.userId.value = value.trim();
             },
           ),
-          SizedBox(height: kDefaultMargin/2),
+          SizedBox(height: kDefaultMargin / 2),
           Padding(
             padding: EdgeInsets.symmetric(
               vertical: kDefaultMargin,
@@ -81,6 +86,8 @@ class SignUpScreen extends StatelessWidget {
             decoration: kInputTextFieldDecoration.copyWith(
               hintText: 'Enter Password',
               hintStyle: kHintTextStyle,
+              contentPadding: EdgeInsets.symmetric(
+                  vertical: kDefaultMargin, horizontal: kDefaultMargin),
               // errorText: !isUserIdValid ? 'Conditions not fulfilled' : null,
             ),
             onChanged: (value) {
@@ -123,7 +130,7 @@ class SignUpScreen extends StatelessWidget {
           ),
           SizedBox(height: kDefaultMargin),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               MaterialButton(
                 shape: RoundedRectangleBorder(
@@ -144,20 +151,16 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
-          ),
-          SizedBox(height: kDefaultMargin * 2),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
+              Spacer(),
               Text(
-                'Don\'t have an account?',
-                style: kTextButtonTextStyle.copyWith(color: kDefaultFontColor),
+                'Have an account?',
+                style: kTextButtonTextStyle.copyWith(
+                    color: kDefaultFontColor, fontSize: 12),
               ),
               TextButton(
-                onPressed: authController.goToSignUp,
+                onPressed: () => Get.offNamed(LoginScreen.route),
                 child: Text(
-                  'Sign Up',
+                  'Login',
                   style: kTextButtonTextStyle,
                 ),
               ),
