@@ -48,6 +48,11 @@ class AuthController extends GetxController {
         //store session only when remember box is checked
         if (shouldRememberSession.isTrue)
           await prefs.setString('activeSession', userId.value);
+        // flush variables before moving forward
+        userId.value = '';
+        password.value = '';
+        _isUserIdValid = false;
+        _isPasswordValid = false;
         Get.offAndToNamed(HomeScreen.route);
       } else
         showSnackBar(
