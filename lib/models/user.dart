@@ -22,5 +22,5 @@ User user = User('user@email.com', 'Password@123');
 /// serializing [user] object to [jsonString]
 String jsonString = jsonEncode(user.toJson());
 
-/// deSerializing [jsonString] object to [userObject]
+/// deSerializing [jsonString] to [userObject]
 User userObject = User.fromJson(jsonDecode(jsonString));
